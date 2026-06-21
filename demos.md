@@ -12,7 +12,20 @@ Use this checklist to avoid missing important Copilot and Agent capabilities in 
 
 ## A) Core Chat and Agent Surfaces
 - [ ] Chat view vs Inline Chat vs Quick Chat: show when each surface is better.
-- [ ] Agents window vs Chat view: run one task from each and compare workflow.
+- [ ] Agents window vs Chat view: run one task from each and compare- [ ] `/explain`, `/fix`, `/tests`, `/setupTests` on selected code.
+- [ ] `/new` and `/newNotebook` as scaffolding workflows.
+- [ ] `/plan` for implementation planning before edits.
+- [ ] `/compact` to summarize long conversation context.
+- [ ] `/search` to generate focused search patterns.
+- [ ] `/init` to generate workspace instructions from project patterns.
+
+### Frontend slash prompt ideas (client-side)
+- [ ] `/cascade-map` specificity and cascade audit:
+	Prompt: `/cascade-map Analyze #styles.css and list the top 5 selector conflicts causing style overrides in the header and CTA button. Propose a refactor that removes !important and lowers selector depth.`
+- [ ] `/landmark-lint` semantic HTML and a11y structure pass:
+	Prompt: `/landmark-lint Review #index.html and rewrite the page landmarks (header, nav, main, section, footer), heading hierarchy, and form labels for accessibility while preserving current visual structure.`
+- [ ] `/fluid-layout-rescue` responsive CSS repair plan:
+	Prompt: `/fluid-layout-rescue Inspect #index.htm workflow.
 - [ ] Switch agent type/session config: show agent, model, and permission controls.
 - [ ] Run parallel chat sessions and switch between them without losing context.
 
@@ -45,12 +58,7 @@ Use this checklist to avoid missing important Copilot and Agent capabilities in 
 - [ ] Show `#` tool mentions and when explicit tool direction helps.
 
 ## F) Slash Commands and Power User Flows
-- [ ] `/explain`, `/fix`, `/tests`, `/setupTests` on selected code.
-- [ ] `/new` and `/newNotebook` as scaffolding workflows.
-- [ ] `/plan` for implementation planning before edits.
-- [ ] `/compact` to summarize long conversation context.
-- [ ] `/search` to generate focused search patterns.
-- [ ] `/init` to generate workspace instructions from project patterns.
+l and #styles.css and fix horizontal scrolling between 320px and 1024px. Use modern CSS (clamp, minmax, auto-fit, container-friendly spacing) and keep desktop unchanged.`
 
 ## G) Editing, Review, and Recovery
 - [ ] Apply AI edits and review inline diffs in changed files.
@@ -83,6 +91,19 @@ Use this checklist to avoid missing important Copilot and Agent capabilities in 
 - [ ] Show auto-invocable vs manual-only skill behavior.
 - [ ] Demonstrate skill resources (script/template referenced by `SKILL.md`).
 - [ ] Mention optional forked skill context for heavy tasks.
+
+### Frontend skill ideas (client-side)
+- [ ] Build an accessibility audit skill: scan UI components for a11y gaps (ARIA, keyboard flow, focus states), then return a prioritized fix list.
+- [ ] Create a responsive layout QA skill: check breakpoints and overflow issues across common viewport sizes, then suggest CSS or component updates.
+- [ ] Create a performance hygiene skill: detect heavy bundles, unnecessary re-renders, and unoptimized images, then propose concrete frontend optimizations.
+
+### Modern CSS skills (Baseline 2025/2026 focus)
+- [ ] Create an anchored overlays skill (CSS Anchor Positioning):
+	Teach Copilot to implement tooltip/popover/dropdown positioning using `anchor-name`, `position-anchor`, `anchor()`, and `@position-try` fallbacks before suggesting JS popper libraries.
+- [ ] Create a scroll-state interaction skill (Container Scroll-State Queries):
+	Teach Copilot to build sticky headers, back-to-top controls, and snapped-card highlights with `container-type: scroll-state` and `@container ... scroll-state(...)` (`scrollable`, `scrolled`, `snapped`, `stuck`) patterns.
+- [ ] Create an entry/exit transitions skill (@starting-style + view-transition patterns):
+	Teach Copilot to generate first-render and display-toggle animations using `@starting-style`, `allow-discrete` transitions for `display/overlay`, and optional `view-transition-class` usage for route/state changes.
 
 ## L) Enterprise and Extension Story
 - [ ] MCP integration concept: extend Copilot with external tools/services.
