@@ -105,11 +105,44 @@ l and #styles.css and fix horizontal scrolling between 320px and 1024px. Use mod
 - [ ] Create an entry/exit transitions skill (@starting-style + view-transition patterns):
 	Teach Copilot to generate first-render and display-toggle animations using `@starting-style`, `allow-discrete` transitions for `display/overlay`, and optional `view-transition-class` usage for route/state changes.
 
+### Agent demo ideas (project mentoring + quality)
+- [ ] Tutor agent (junior developer coach):
+	Run an agent that teaches by stages: explain project architecture, assign a small coding task, then require the junior to explain trade-offs before applying code. The agent should prefer hints over full solutions in the first pass.
+- [ ] Code-reviewer agent (repository standards enforcer):
+	Run an agent after each junior commit to check naming, folder conventions, test coverage gaps, accessibility, security basics, and style consistency against repo instructions and best practices.
+- [ ] Artistic agent (MCP-powered visual creator):
+	Run an agent that translates feature stories into image prompts, generates multiple visual options via MCP image tools, evaluates options against UI goals, and returns a selected asset plus rationale.
+
 ## L) Enterprise and Extension Story
 - [ ] MCP integration concept: extend Copilot with external tools/services.
 - [ ] Extension-contributed participants/tools overview.
 - [ ] Organization policy controls (features/models/tools governance).
 - [ ] Security posture: approvals, least privilege, and auditability mindset.
+
+### MCP tool demo: OpenAI image generation server
+- [ ] Recommended server (community, OpenAI-focused):
+	https://github.com/spartanz51/imagegen-mcp
+    https://marketplace.visualstudio.com/items?itemName=marquaye.vscode-imagegen
+
+Short install + configuration (Windows, VS Code MCP client):
+1. Prerequisite: Node.js 18+ installed.
+2. Configure MCP server in VS Code settings JSON:
+
+```json
+"mcpServers": {
+  "imagegen": {
+    "command": "cmd",
+    "args": ["/c", "npx", "-y", "imagegen-mcp", "--models", "gpt-image-1"],
+    "env": {
+      "OPENAI_API_KEY": "${env:OPENAI_API_KEY}"
+    }
+  }
+}
+```
+
+3. Set `OPENAI_API_KEY` in your environment (or directly in MCP server env).
+4. Restart VS Code, open Copilot Chat tools, and verify `text-to-image` and `image-to-image` appear.
+5. Demo prompt: “Generate 3 hero image variants for this feature, then save the preferred one and explain why it matches our design system.”
 
 ## M) Experimental/Optional Features (Time Permitting)
 - [ ] Review Selection / Code Review flows in-editor or SCM view.
