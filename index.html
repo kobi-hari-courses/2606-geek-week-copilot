@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PulseMath Practice</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Sora:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style-cold.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="quiz-card" aria-live="polite">
+        <header class="quiz-header">
+          <p class="eyebrow">Daily Math Sprint</p>
+          <h1>PulseMath Practice</h1>
+          <p class="description">
+            Solve each problem one by one. After the last question, you will see your score and a full review.
+          </p>
+        </header>
+
+        <div id="quiz-view">
+          <div class="progress-wrap">
+            <p id="progress-label">Question 1 of 1</p>
+            <div class="progress-track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+              <div id="progress-fill" class="progress-fill"></div>
+            </div>
+          </div>
+
+          <article class="question-box">
+            <p id="question-text">Loading question...</p>
+          </article>
+
+          <form id="answer-form" class="answer-form" autocomplete="off">
+            <label for="answer-input">Your Answer</label>
+            <input
+              id="answer-input"
+              name="answer"
+              type="number"
+              inputmode="numeric"
+              step="any"
+              required
+              placeholder="Type your answer"
+            />
+            <button id="submit-btn" type="submit">Submit Answer</button>
+          </form>
+        </div>
+
+        <section id="results-view" class="hidden" aria-live="polite">
+          <div class="score-panel">
+            <h2>Final Score</h2>
+            <p id="score-text">0 / 0</p>
+            <p id="score-percent">0%</p>
+          </div>
+
+          <h3>Review</h3>
+          <ul id="results-list" class="results-list"></ul>
+
+          <button id="restart-btn" type="button">Practice Again</button>
+        </section>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

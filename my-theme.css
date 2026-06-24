@@ -1,0 +1,31 @@
+:root {
+    --primary-color: #18ab2c;
+    --accent-color: #e0872f;
+    --foreground-color: #f6fbff;
+    --background-color: #0f1a2b;
+
+    --p-00: var(--background-color);
+    --p-10: color-mix(in srgb, var(--primary-color) 20%, var(--background-color) 80%);
+    --p-20: color-mix(in srgb, var(--primary-color) 40%, var(--background-color) 60%);
+    --p-30: color-mix(in srgb, var(--primary-color) 60%, var(--background-color) 40%);
+    --p-40: color-mix(in srgb, var(--primary-color) 80%, var(--background-color) 20%);
+    --p-50: var(--primary-color);
+    --p-60: color-mix(in srgb, var(--primary-color) 80%, var(--foreground-color) 20%);
+    --p-70: color-mix(in srgb, var(--primary-color) 60%, var(--foreground-color) 40%);
+    --p-80: color-mix(in srgb, var(--primary-color) 40%, var(--foreground-color) 60%);
+    --p-90: color-mix(in srgb, var(--primary-color) 20%, var(--foreground-color) 80%);
+    --p-100: var(--foreground-color);
+
+    --a-00: var(--background-color);
+    --a-10: color-mix(in srgb, var(--accent-color) 20%, var(--background-color) 80%);
+    --a-20: color-mix(in srgb, var(--accent-color) 40%, var(--background-color) 60%);
+    --a-30: color-mix(in srgb, var(--accent-color) 60%, var(--background-color) 40%);
+    --a-40: color-mix(in srgb, var(--accent-color) 80%, var(--background-color) 20%);
+    --a-50: var(--accent-color);
+    --a-60: color-mix(in srgb, var(--accent-color) 80%, var(--foreground-color) 20%);
+    --a-70: color-mix(in srgb, var(--accent-color) 60%, var(--foreground-color) 40%);
+    --a-80: color-mix(in srgb, var(--accent-color) 40%, var(--foreground-color) 60%);
+    --a-90: color-mix(in srgb, var(--accent-color) 20%, var(--foreground-color) 80%);
+    --a-100: var(--foreground-color);
+
+}
